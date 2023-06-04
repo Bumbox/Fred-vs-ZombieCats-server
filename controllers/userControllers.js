@@ -22,7 +22,6 @@ async function getAllUsers (req, res) {
 async function CreateNewUser (req, res) {
     try {
         const newUserId = await createNewUserSQL(req.body)
-        console.log(req.body)
         res.send(newUserId)
     } catch (err) {
         console.log(err)
