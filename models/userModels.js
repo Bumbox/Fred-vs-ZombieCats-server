@@ -12,6 +12,7 @@ async function getUserByIdModel(userId) {
 async function getAllUsersModel() {
   try {
     const users = await dbConnection("users");
+
     return users;
   } catch (err) {
     console.log(err);

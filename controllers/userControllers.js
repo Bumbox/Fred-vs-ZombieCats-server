@@ -13,6 +13,10 @@ async function getUserById (req, res) {
 async function getAllUsers (req, res) {
     try {
         const users = await getAllUsersModel()
+        users.sort((a, b) => b.Scores - a.Scores);
+        users.forEach((user, index) => {
+          user.place = index + 1;
+        });
         res.send(users)
     } catch (err) {
         console.log(err)
