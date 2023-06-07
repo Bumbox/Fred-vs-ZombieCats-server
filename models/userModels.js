@@ -3,6 +3,7 @@ const dbConnection = require("../knex/knexDb");
 async function getUserByIdModel(userId) {
   try {
     const user = await dbConnection("users").where("id", userId).first();
+    // console.log(user)
     return user;
   } catch (err) {
     console.log(err);
