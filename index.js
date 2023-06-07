@@ -2,9 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const dbConnection = require('./knex/knexDb')
 const router = require('./routes/userRoutes');
+require('dotenv').config()
 
-
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const app = express()
 
 app.use(cors())
